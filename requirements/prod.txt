@@ -1,0 +1,7 @@
+-r base.txt
+
+django-anymail[mailgun]
+gunicorn
+psycopg2
+
+#hiredis
