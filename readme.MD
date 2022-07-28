@@ -13,7 +13,10 @@
 ```text
 {{project_name}} => for the actual app_name, in this case 'cityp'
 ````
-4. docker-compose up -d --build
+4. cd ..
+5. rename the .env* files (remove the .sample from the name and make sure to change the contents)
+#### make sure you are on the "root" folder, is where the app, database, nginx and pgadmin folders are
+5. docker-compose up -d --build
 
 ---
 ### DEV configuration
