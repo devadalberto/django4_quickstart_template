@@ -2,6 +2,9 @@
 Pipfile
 .python-version
 staticfiles-cdn/
+.DS_Store
+
+
 
 ### Django ###
 *.log
