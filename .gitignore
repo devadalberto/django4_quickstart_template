@@ -3,7 +3,7 @@ Pipfile
 .python-version
 staticfiles-cdn/
 .DS_Store
-
+.env.db
 
 
 ### Django ###
