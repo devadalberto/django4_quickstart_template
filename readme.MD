@@ -11,11 +11,12 @@
 2. cd cityp/app
 3. change the entrypoint.sh file and replace line 18
 ```text
-{{project_name}} => for the actual app_name, in this case 'cityp'
+{{changeme}} => for the actual app_name, in this case 'cityp'
 ````
 4. cd ..
 5. rename the .env* files (remove the .sample from the name and make sure to change the contents)
 #### make sure you are on the "root" folder, is where the app, database, nginx and pgadmin folders are
+6. make sure your entrypoints.*.sh files have exec permissions (sudo chmod a+x entrypoint.*)
 5. docker-compose up -d --build
 
 ---
@@ -33,7 +34,8 @@
 
 ### ToDo
 
-- [ ] Finish documentation
+- [X] Doc for PROD deployment
+- [ ] Finish documentation for DEV deployment
 - [ ] Optimize image size
 - [ ] Check for Security
 - [ ] Automate deployment
