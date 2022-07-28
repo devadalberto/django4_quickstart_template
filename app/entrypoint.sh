@@ -12,6 +12,7 @@ then
 fi
 
 
+python manage.py makemigrations --no-input
 python manage.py migrate --no-input
 python manage.py collectstatic --no-input --clear
 # change line below to replace {{changeme by the actual app name}}

@@ -28,7 +28,7 @@ DATABASES = {
         "HOST": os.environ.get("SQL_HOST"),
         "NAME": os.environ.get("SQL_DBNAME"),
         "USER": os.environ.get("SQL_USER"),
-        "PASSWORD": os.environ.get("SQL_PASS"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD"),
         "PORT": os.environ.get("SQL_PORT"),
     },
 }
