@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import environ
+# import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,13 +8,13 @@ import environ
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
 
-env = environ.Env()
+# env = environ.Env()
 
-READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)
+# READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -131,8 +131,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 SITE_ID = 1
 AUTH_USER_MODEL = "account.Customer"  # your_app.your_class
-# LOGIN_REDIRECT_URL = "/account/dashboard"
-# LOGIN_URL = "/account/login/"
+LOGIN_REDIRECT_URL = "/account/dashboard"
+LOGIN_URL = "/account/login/"
 
 # Email setting
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

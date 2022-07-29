@@ -13,7 +13,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - devdb
   
   pgadmin:
     build: ./pgadmin
@@ -26,29 +26,29 @@ services:
         - '5050:80'
     restart: always
     depends_on:
-      - db
+      - devdb
     volumes: 
         - pgadmin:/root/.pgadmin
   
 
-  db:
+  devdb:
     build: ./database
-    container_name: db
+    container_name: devdb
     image: postgres-dev-devadalberto:0.0.1
-    environment:
-      - POSTGRES_USER=dbadmindev
-      - POSTGRES_PASSWORD=dbapasswd1dev
-      - POSTGRES_DB=pgsqldbdev
-    # env_file:
-    #   - .env.dev
+    # environment:
+    #   - POSTGRES_USER=dbadmindev
+    #   - POSTGRES_PASSWORD=dbapasswd1dev
+    #   - POSTGRES_DB=pgsqldbdev
+    env_file:
+      - .env.dev
     ports:
       - "5432:5432"
     restart: always
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - dev-db-data:/var/lib/postgresql/data
 
 
 volumes:
-    db-data:
+    dev-db-data:
     pgadmin:
   

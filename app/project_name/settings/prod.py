@@ -16,7 +16,8 @@ DEBUG = os.environ.get("DEBUG")
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS")]
+# ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS")]
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # EMAIL_BACKEND = env(
 #     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
@@ -24,7 +25,7 @@ ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS")]
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": os.environ.get("SQL_ENGINE"),
         "HOST": os.environ.get("SQL_HOST"),
         "NAME": os.environ.get("SQL_DBNAME"),
         "USER": os.environ.get("SQL_USER"),
