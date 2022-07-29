@@ -1,5 +1,6 @@
-from .base import *
+import environ
 import os
+from .base import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
@@ -25,7 +26,7 @@ ALLOWED_HOSTS = [os.environ.get("DJANGO_ALLOWED_HOSTS")]
 # }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": env("SQL_ENGINE"),
         "HOST": os.environ.get("SQL_HOST"),
         "NAME": os.environ.get("SQL_DBNAME"),
         "USER": os.environ.get("SQL_USER"),

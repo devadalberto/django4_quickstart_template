@@ -1,3 +1,4 @@
+import environ
 import os
 from .base import *
 
@@ -25,7 +26,7 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE"),
+        "ENGINE": env("SQL_ENGINE"),
         "HOST": os.environ.get("SQL_HOST"),
         "NAME": os.environ.get("SQL_DBNAME"),
         "USER": os.environ.get("SQL_USER"),
