@@ -16,7 +16,7 @@ RUN sed -i -e 's/https/http/' /etc/apk/repositories && \
 # install dependencies
 COPY . .
 RUN pip install --upgrade pip
-COPY ./requirements/cd  .
+COPY ./requirements/* .
 RUN pip install -r requirements/dev.txt
 
 # copy entrypoint.sh
