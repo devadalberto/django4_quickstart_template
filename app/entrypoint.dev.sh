@@ -15,6 +15,6 @@ python manage.py flush --no-input
 python manage.py makemigrations
 python manage.py migrate --run-syncdb
 # python manage.py migrate
-python manage.py runserver 0.0.0.0:9000 --settings cityp.settings.dev
+python manage.py runserver 0.0.0.0:9000 --settings {{project_name}}.settings.dev
 
 exec "$@"
