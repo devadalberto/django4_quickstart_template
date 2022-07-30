@@ -1,24 +1,7 @@
-# docker-compose.prod
 
-# DEBUG=0
-# SECRET_KEY=changeme
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
-
-# DJANGO_SETTINGS_MODULE=cityp.settings.prod
-DJANGO_SETTINGS_MODULE=cityp.settings.dev
-
 SQL_ENGINE=django.db.backends.postgresql
 SQL_PORT=5432
-
-# SQL_DBNAME=pgsqldb
-# SQL_USER=dbadmin
-# SQL_PASSWORD=changeme
-# SQL_HOST=db
-
-# POSTGRES_USER=${SQL_USER}
-# POSTGRES_PASSWORD=${SQL_PASSWORD}
-# POSTGRES_DB=${SQL_DBNAME}
-
 DATABASE=postgres
 
 READ_DOT_ENV_FILE=1
@@ -31,6 +14,14 @@ DEV_SQL_DBNAME=devpostgres
 DEV_SQL_USER=devpostgres
 # DB_URL=${DATABASE}://
 
+DJANGO_SETTINGS_MODULE=cityp.settings.dev
 POSTGRES_USER=${DEV_SQL_USER}
 POSTGRES_PASSWORD=${DEV_SQL_PASSWORD}
 POSTGRES_DB=${DEV_SQL_DBNAME}
+
+
+##### modify the section below for PROD (if needed, in theory all the values should come from .env)
+# DJANGO_SETTINGS_MODULE=cityp.settings.prod
+# POSTGRES_USER=${SQL_USER}
+# POSTGRES_PASSWORD=${SQL_PASSWORD}
+# POSTGRES_DB=${DQL_DBNAME}

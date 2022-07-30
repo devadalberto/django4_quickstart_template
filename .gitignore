@@ -4,6 +4,7 @@ Pipfile
 staticfiles-cdn/
 .DS_Store
 .env.db
+.dbenv
 
 
 ### Django ###
