@@ -4,7 +4,7 @@ if [ "$DATABASE" = "postgres" ]
 then
     echo "Waiting for postgres..."
 
-    while ! nc -z $SQL_HOST $SQL_PORT; do
+    while ! nc -z $DEV_SQL_HOST $SQL_PORT; do
       sleep 0.1
     done
 
@@ -13,7 +13,8 @@ fi
 
 python manage.py flush --no-input
 python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver 0.0.0.0:8000 --settings {{projectname}}.settings.dev
+python manage.py migrate --run-syncdb
+# python manage.py migrate
+python manage.py runserver 0.0.0.0:9000 --settings cityp.settings.dev
 
 exec "$@"
