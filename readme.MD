@@ -34,7 +34,7 @@ docker-compose up -d --build
 5. rename the .env and .dbenv files (remove the .sample from the name and make sure to update the contents)
 #### confirm you are on the "root" folder, is where the app, database, nginx and pgadmin folders are
 6. make sure your entrypoints.*.sh files have exec permissions (sudo chmod a+x entrypoint.*)
-7. docker-compose up -f docker-compose.dev.yml --build
+7. docker-compose -f docker-compose.dev.yml up --build
 
 
 ---

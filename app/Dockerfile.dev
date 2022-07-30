@@ -14,8 +14,9 @@ RUN sed -i -e 's/https/http/' /etc/apk/repositories && \
     apk add postgresql-dev gcc python3-dev musl-dev
 
 # install dependencies
+COPY . .
 RUN pip install --upgrade pip
-COPY ./requirements/ .
+COPY ./requirements/cd  .
 RUN pip install -r requirements/dev.txt
 
 # copy entrypoint.sh
