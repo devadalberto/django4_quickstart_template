@@ -1,3 +1,6 @@
+PROJECT_NAME=changeme
+APP_ENVIRONMENT=dev/prod
+DJANGO_SETTINGS_MODULE=${PROJECT_NAME}.settings.${APP_ENVIRONMENT}
 
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 SQL_ENGINE=django.db.backends.postgresql
@@ -12,16 +15,13 @@ DEV_SQL_HOST=devdb
 DEV_SQL_PASSWORD=devKamehameha
 DEV_SQL_DBNAME=devpostgres
 DEV_SQL_USER=devpostgres
-# DB_URL=${DATABASE}://
 
-DJANGO_SETTINGS_MODULE=cityp.settings.dev
 POSTGRES_USER=${DEV_SQL_USER}
 POSTGRES_PASSWORD=${DEV_SQL_PASSWORD}
 POSTGRES_DB=${DEV_SQL_DBNAME}
 
 
 ##### modify the section below for PROD (if needed, in theory all the values should come from .env)
-# DJANGO_SETTINGS_MODULE=cityp.settings.prod
 # POSTGRES_USER=${SQL_USER}
 # POSTGRES_PASSWORD=${SQL_PASSWORD}
 # POSTGRES_DB=${DQL_DBNAME}
