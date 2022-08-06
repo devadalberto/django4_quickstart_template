@@ -6,27 +6,44 @@
 #### remember you have to be on the "root" folder (where the app, database, nginx and pgadmin folders are) to run the docker-compose
 ---
 
-### For both configs follow steps 1 to 5
+### For both configs follow steps 1 to 6
 
-1. django-admin startproject cityd --template https://github.com/devadalberto/django4_quickstart_template/archive/refs/heads/devdocker.zip
-2. cd cityp/app
-3. rename the .env and .devenv files (remove the .sample from the name and make sure to update the contents)
-    Most importan lines are 1 and 2, where {{project_name}}.. well, you know
-4. make sure your entrypoints.*.sh files have exec permissions (sudo chmod a+x entrypoint.*)
-5. depending on the environment comment/uncomment the lines 8 or 9 from manage.py
+1. django-admin startproject dbz-proj --template https://github.com/devadalberto/django4_quickstart_template/archive/refs/heads/devdocker.zip
+2. cd dbz-proj
+3. rename the .env and .devenv sample files
+
+```bash
+mv .env.sample .env
+mv .devenv.sample .devenv
+```
+
+4. update the PROJECT_NAME on the file
+5. make sure your entrypoint.\*.sh files have exec permissions (sudo chmod a+x entrypoint.*)
+
+```bash
+chmod a+x app/entrypoint.*
+```
+
+6. depending on the environment comment/uncomment the lines 8 or 9 from file app/manage.py
+   
+   By default the config is using the "prod" config
 
 
 #### PROD Configuration 
 
-6. docker-compose up -d --build
+```bash
+docker-compose up -d --build
+```
 
-This prod config runs on port 8844 (with an nginx as a reverse proxy) and django runs using gunicorn
+This config runs on port 8844 (with an nginx as a reverse proxy) and django runs using gunicorn
 
 ---
 
 ### DEV configuration
 
-6. docker-compose -f docker-compose.dev.yml up --build
+```bash
+docker-compose -f docker-compose.dev.yml up --build
+```
 
 This Dev config runs on port 9000 and django uses it's build in webserver
 ---

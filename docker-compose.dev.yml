@@ -1,10 +1,10 @@
 version: "3.9"
 services:
-  web:
+  dev-web:
     build:
       context: ./app
       dockerfile: Dockerfile.dev
-    container_name: web
+    container_name: dev-web
     image: django-dev-devadalberto:0.0.2
     volumes:
       - ./app/:/usr/src/app/
