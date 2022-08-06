@@ -14,7 +14,8 @@
 
 ```bash
 mv .env.sample .env
-mv .devenv.sample .devenv
+or
+mv .env.dev.sample .env
 ```
 
 4. update the PROJECT_NAME on the file
