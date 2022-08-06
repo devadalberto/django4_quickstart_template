@@ -15,7 +15,6 @@ fi
 python manage.py makemigrations --no-input
 python manage.py migrate --no-input
 python manage.py collectstatic --no-input --clear
-# change line below to replace {{replace project_name by the actual app name}}
-gunicorn {{project_name}}.wsgi:application --bind 0.0.0.0:8000 --workers=4
+gunicorn $PROJECT_NAME.wsgi:application --bind 0.0.0.0:8000 --workers=4
 
 exec "$@"

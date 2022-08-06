@@ -9,11 +9,15 @@ services:
     volumes:
       - ./app/:/usr/src/app/
     env_file:
-      - .env
+      - .devenv
     ports:
       - "9000:9000"
     depends_on:
       - devdb
+    links:
+      - devdb:db
+    networks:
+      - dev-network
 
   pgadmin:
     build: ./pgadmin
@@ -34,18 +38,21 @@ services:
     build: ./database
     container_name: devdb
     image: postgres-dev-devadalberto:0.0.2
-    environment:
-      - POSTGRES_USER=devpostgres
-      - POSTGRES_PASSWORD=devKamehameha
-      - POSTGRES_DB=devpostgres
-    # env_file:
-    #   - .env
+
+    env_file:
+      - .devenv
     ports:
       - "5432:5432"
     restart: always
     volumes:
       - data-dev:/var/lib/postgresql/data
+    networks:
+      - dev-network
 
 volumes:
   data-dev:
   pgadmin:
+
+networks:
+  dev-network:
+    driver: bridge
