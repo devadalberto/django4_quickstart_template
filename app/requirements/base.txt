@@ -7,13 +7,14 @@ django-environ
 django-extensions
 django-model-utils
 django-mptt
+django-tree-queries
+djangorestframework
 mypy
 psycopg2
 python-slugify
 pytz
 six
-
-# Pillow
+Pillow
 
 # project specific
 # ie - if you need excel reports you will install a set of packages like the

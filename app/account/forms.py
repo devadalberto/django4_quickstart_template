@@ -226,15 +226,3 @@ class UserEditForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields["user_name"].required = True
         self.fields["email"].required = True
-
-
-# from django import forms
-# from django.contrib.auth.forms import UserCreationForm
-# from django.forms import fields
-# from .models import User
-
-
-# class UserCreation(UserCreationForm):
-#     class Meta:
-#         model = User
-#         fields = "__all__"

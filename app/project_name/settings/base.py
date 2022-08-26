@@ -34,10 +34,14 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "corsheaders",
+    "rest_framework",
 ]
 
 # LOCAL_APPS = []
-LOCAL_APPS = ["account.apps.AccountConfig"]
+LOCAL_APPS = [
+    "account.apps.AccountConfig",
+    "api.apps.ApiConfig"
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
