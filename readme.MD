@@ -58,3 +58,10 @@ This Dev config runs on port 9000 and django uses it's build in webserver
 - [ ] Optimize image size
 - [ ] Check for Security
 - [ ] Automate deployment
+
+### Credits
+
+#### Lot of the code in this project was "proudly borrowed" from other projects, if I miss to list yours here please let me know
+
+1. https://github.com/cookiecutter/cookiecutter-django
+2. https://github.com/veryacademy/django-ecommerce-project-v2
