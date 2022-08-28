@@ -18,7 +18,7 @@ or
 mv .env.dev.sample .env
 ```
 
-4. update the PROJECT_NAME on the file
+4. update the PROJECT_NAME on the file (.env and/or .devenv)
 5. make sure your entrypoint.\*.sh files have exec permissions (sudo chmod a+x entrypoint.*)
 
 ```bash

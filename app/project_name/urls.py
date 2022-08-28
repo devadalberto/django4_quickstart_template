@@ -19,6 +19,7 @@ urlpatterns = [
 
 # admin site Headers and Index titles
 admin.site.site_header = 'Change your Admin Site Header (urls.py)'
+admin.site.site_title = 'Browser Title'
 admin.site.index_title = 'Change your Admin Site Index'
 
 if settings.DEBUG:
